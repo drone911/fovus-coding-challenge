@@ -1,7 +1,20 @@
 # fovus-coding-challenge
-The project description is at https://bit.ly/fovus-coding
+Only using AWS Cloud Development Kit, implement the following:
+1. **Authenticate Users and Upload Scripts**:
+   - Use AWS Cognito for user authentication and authorization.
+   - Allow authenticated users to upload scripts to an S3 bucket.
+   - Record the script path in DynamoDB via a Lambda function.
 
-Steps:
+2. **Trigger EC2 Instance for Processing**:
+   - Enable DynamoDB Streams to trigger a Lambda function.
+   - The Lambda function provisions an EC2 instance.
+   - The EC2 instance processes the uploaded scripts using a specified algorithm.
+
+3. **Store Processed Scripts and Update Metadata**:
+   - Save processed scripts to a second S3 bucket.
+   - Use a Lambda function to update the script path in DynamoDB.
+  
+Steps to Run:
 1. ``npm install -g aws-cdk``
 2. Install AWS Cli https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 3. Use ``aws configure`` to add manually generated access key for your AWS account or follow this guide (https://docs.aws.amazon.com/sdkref/latest/guide/access-sso.html) to configure authentication using single-sign-on.
